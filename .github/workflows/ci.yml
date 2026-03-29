@@ -1,4 +1,4 @@
-name: simple CI
+name: Simple CI
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
 
 jobs:
   run:
-    run-on:ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
-      -name:checkout
-       user:actions/python@v3
+      - name: checkout
+        uses: actions/checkout@v3
 
-       -name:run ids-script
+      - name: run ids-script
         run: |
           chmod +x ids-script.sh
           ./ids-script.sh
